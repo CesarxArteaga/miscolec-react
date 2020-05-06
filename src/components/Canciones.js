@@ -7,6 +7,8 @@ export default class Canciones extends React.Component {
         this.state = {
             canciones : []
         }
+
+        this.playing = this.playing.bind(this)
     }
 
     componentDidMount(){
@@ -15,7 +17,9 @@ export default class Canciones extends React.Component {
         .then(json => this.setState({canciones: json}))
     }
     
-         
+    playing(cancion){
+        alert(`Playing => ${cancion}`)
+    }
 
     render(){
         return (
@@ -25,7 +29,7 @@ export default class Canciones extends React.Component {
             {this.state.canciones.map(cancion =>(
                 <li className="list-group-item" key={cancion.id_cancion}>
                     {cancion.titulo_cancion}
-                    <button className="btn btn-sm btn-primary float-right">Play</button>
+                    <button className="btn btn-sm btn-primary float-right" onClick={()=>this.playing(cancion.titulo_cancion)}>Play</button>
                 </li>
             ))}
             

@@ -21,7 +21,7 @@ export default class Albumes extends React.Component {
             <div className="container">
                 <div className="row mt-4">
                 {this.state.albumes.map(album=>(
-                    <div className="col-sm-4" key={album.id_album}>
+                    <div className="col-md-4" key={album.id_album}>
                     <div className="card mt-2" >
                     <div className="card-body">
                         <h3>{album.titulo_album}</h3>
